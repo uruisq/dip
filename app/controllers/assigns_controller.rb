@@ -12,6 +12,24 @@ class AssignsController < ApplicationController
     end
   end
 
+  def update
+    team = Team.friendly.find(params[:team_id])
+    if current_user.id == team.owner_id
+      assign_id = params[:id]
+      assign = Assign.find(params[:id])
+      team.owner_id = assign.user_id
+      if team.save
+        user = User.find(assign.user_id)
+        AssignMailer.update_mail(user.email, team.name).deliver
+        redirect_to team_url(team), notice: I18n.t('views.messages.rights_updated')
+      else
+        redirect_to team_url(team), notice: I18n.t('views.messages.rights_could_not_update')
+      end
+    else
+      redirect_to team_url(team), notice: I18n.t('views.messages.you_dont_have_the_rights')
+    end
+  end
+
   def destroy
     assign = Assign.find(params[:id])
     destroy_message = assign_destroy(assign, assign.user)
