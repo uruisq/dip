@@ -212,6 +212,10 @@ ja:
       failed_to_assign: 'アサインに失敗しました！'
       cannot_delete_the_leader: 'リーダーは削除できません。'
       cannot_delete_only_a_member: 'このユーザーはこのチームにしか所属していないため、削除できません。'
+      rights_updated: '権限を移動しました。'
+      rights_could_not_update: '権限を移動できませんでした。'
+      you_dont_have_the_rights: '権限がありません。'
+      team_rights_updated: 'チームリーダーの権限があなたに委譲されました。'
       delete_member: 'メンバーを削除しました。'
       cannot_delete_member_4_some_reason: 'なんらかの原因で、削除できませんでした。'
       failed_to_post: '投稿できませんでした...'
@@ -257,6 +261,7 @@ ja:
       delete: '削除'
       create: '作成'
       invite: '招待'
+      rights: '権限移動'
     top:
       line1: 'このアプリケーションは、チームごと、議題ごとに別れて'
       line2: '特定のイシュー（議題）をメンバーで見やすく共有するためのアプリケーションです'
