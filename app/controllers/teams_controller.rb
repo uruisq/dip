@@ -17,7 +17,7 @@ class TeamsController < ApplicationController
 
   def edit
     unless current_user == @team.owner
-      redirect_to team_path, notice: I18n.t('views.messages.cannot_edit_but_the_leader')'チームリーダーのみ編集可能です'
+      redirect_to team_path, notice: I18n.t('views.messages.cannot_edit_but_the_leader')
     end
   end
 
